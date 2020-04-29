@@ -1,7 +1,7 @@
 SOURCES := $(shell find . -name '*.go')
 BINARY := seed
 IMAGE_TAG := dev
-IMAGE := danielpacak/redis-ha-seed:$(IMAGE_TAG)
+IMAGE := danielpacak/redis-sentinel-client-go-seed:$(IMAGE_TAG)
 
 build: $(BINARY)
 

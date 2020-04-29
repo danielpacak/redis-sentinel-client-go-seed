@@ -7,12 +7,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/danielpacak/redis-ha-seed/pkg/etc"
-	"github.com/danielpacak/redis-ha-seed/pkg/persistence/redis"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/etc"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/persistence/redis"
 	xredis "github.com/gomodule/redigo/redis"
 
-	"github.com/danielpacak/redis-ha-seed/pkg/http/api"
-	"github.com/danielpacak/redis-ha-seed/pkg/sentinel"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/http/api"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/sentinel"
 	log "github.com/sirupsen/logrus"
 )
 

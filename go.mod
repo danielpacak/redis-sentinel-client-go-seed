@@ -1,4 +1,4 @@
-module github.com/danielpacak/redis-ha-seed
+module github.com/danielpacak/redis-sentinel-client-go-seed
 
 go 1.14
 

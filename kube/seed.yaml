@@ -28,7 +28,7 @@ spec:
     spec:
       serviceAccountName: seed
       containers:
-        - image: danielpacak/redis-ha-seed:dev
+        - image: danielpacak/redis-sentinel-client-go-seed:dev
           name: seed
           env:
             - name: "SEED_LOG_LEVEL"

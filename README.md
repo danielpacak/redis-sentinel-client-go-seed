@@ -1,4 +1,4 @@
-# redis-ha-seed
+# redis-sentinel-client-go-seed
 
 ## Getting started
 
