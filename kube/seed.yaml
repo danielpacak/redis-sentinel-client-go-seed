@@ -1,0 +1,57 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: seed
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: seed
+  namespace: seed
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seed
+  namespace: seed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: seed
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: seed
+    spec:
+      serviceAccountName: seed
+      containers:
+        - image: danielpacak/redis-ha-seed:dev
+          name: seed
+          env:
+            - name: "SEED_LOG_LEVEL"
+              value: "trace"
+            - name: "SEED_REDIS_ADDR"
+              value: "redis.redis:26379"
+            - name: "SEED_REDIS_MASTER"
+              value: "mymaster"
+          ports:
+            - name: api-server
+              containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: seed
+  namespace: seed
+spec:
+  type: ClusterIP
+  selector:
+    run: seed
+  ports:
+    - name: api-server
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
