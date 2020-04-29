@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/danielpacak/redis-ha-seed/pkg/persistence"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/persistence"
 
 	log "github.com/sirupsen/logrus"
 )

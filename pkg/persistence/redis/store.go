@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"github.com/danielpacak/redis-ha-seed/pkg/persistence"
+	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/persistence"
 	xredis "github.com/gomodule/redigo/redis"
 	log "github.com/sirupsen/logrus"
 )
