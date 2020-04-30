@@ -11,8 +11,8 @@ import (
 	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/persistence/redis"
 	xredis "github.com/gomodule/redigo/redis"
 
+	"github.com/FZambia/sentinel"
 	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/http/api"
-	"github.com/danielpacak/redis-sentinel-client-go-seed/pkg/sentinel"
 	log "github.com/sirupsen/logrus"
 )
 
