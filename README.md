@@ -1,10 +1,27 @@
 # redis-sentinel-client-go-seed
 
-## Getting started
+A seed Go app which connects to Redis sentinel cluster
+
+## Deploying Redis Sentinel cluster
+
+To begin the process, you need to obtain the `values.yaml` file included in the Bitnami Redis chart:
 
 ```
 $ curl -Lo values.yaml https://raw.githubusercontent.com/bitnami/charts/master/bitnami/redis/values.yaml
 ```
+
+Open the `values.yaml` file and edit the "sentinel" section as shown below:
+
+```yaml
+## Use redis sentinel in the redis pod. This will disable the master and slave services and
+## create one redis service with ports to the sentinel and the redis instances
+sentinel:
+  enabled: true
+## Use password authentication
+usePassword: false
+```
+
+Install the latest version of the chart using the `values.yaml` file as shown below:
 
 ```
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
@@ -34,6 +51,8 @@ I have no name!@redis-client:/$ exit
 exit
 pod "redis-client" deleted
 ```
+
+## Getting started
 
 ```
 $ kubectl apply -f kube/seed.yaml
