@@ -57,7 +57,8 @@ pod "redis-client" deleted
 ```
 $ kubectl apply -f kube/seed.yaml
 $ kubectl port-forward -n seed service/seed 8080:8080
-$ curl localhost:8080
+$ curl -d '{"key": "foo", "value": "bar"}' -H 'Content-Type: application/json' http://localhost:8080/redis/key
+$ curl -H 'Content-Type: application/json' http://localhost:8080/redis/keys
 ["foo"]
 ```
 

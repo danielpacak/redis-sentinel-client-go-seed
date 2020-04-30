@@ -16,6 +16,19 @@ func NewStore(pool *xredis.Pool) persistence.Store {
 	}
 }
 
+func (s *store) Set(key, value string) (err error) {
+	conn := s.pool.Get()
+	defer func() {
+		_ = conn.Close()
+	}()
+	reply, err := conn.Do("SET", key, value)
+	if err != nil {
+		return
+	}
+	log.Tracef("Reply: %v", reply)
+	return
+}
+
 func (s *store) Keys() (keys []string, err error) {
 	conn := s.pool.Get()
 	defer func() {
@@ -25,7 +38,7 @@ func (s *store) Keys() (keys []string, err error) {
 	if err != nil {
 		return
 	}
-	log.Debugf("Reply: %v", reply)
+	log.Tracef("Reply: %v", reply)
 	keys, err = xredis.Strings(reply, err)
 	return
 }
