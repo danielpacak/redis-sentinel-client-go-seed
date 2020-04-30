@@ -19,24 +19,36 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      run: seed
-  strategy: {}
+      app: seed
   template:
     metadata:
       labels:
-        run: seed
+        app: seed
     spec:
       serviceAccountName: seed
+      automountServiceAccountToken: false
       containers:
         - image: danielpacak/redis-sentinel-client-go-seed:dev
           name: seed
           env:
             - name: "SEED_LOG_LEVEL"
-              value: "trace"
+              value: "debug"
             - name: "SEED_REDIS_ADDR"
               value: "redis.redis:26379"
             - name: "SEED_REDIS_MASTER"
               value: "mymaster"
+            - name: "SEED_REDIS_CONNECT_TIMEOUT"
+              value: "500ms"
+            - name: "SEED_REDIS_READ_TIMEOUT"
+              value: "500ms"
+            - name: "SEED_REDIS_WRITE_TIMEOUT"
+              value: "500ms"
+            - name: "SEED_REDIS_POOL_MAX_IDLE"
+              value: "3"
+            - name: "SEED_REDIS_POOL_MAX_ACTIVE"
+              value: "10"
+            - name: "SEED_REDIS_POOL_IDLE_TIMEOUT"
+              value: "5m"
           ports:
             - name: api-server
               containerPort: 8080
@@ -48,8 +60,9 @@ metadata:
   namespace: seed
 spec:
   type: ClusterIP
+  sessionAffinity: None
   selector:
-    run: seed
+    app: seed
   ports:
     - name: api-server
       protocol: TCP
