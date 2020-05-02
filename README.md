@@ -76,15 +76,22 @@ $ curl -H 'Accept: application/json' http://localhost:8080/redis/keys
 
 ### Redis commands
 
-| Command              | Description                                                                        |
-| -------------------- | ---------------------------------------------------------------------------------- |
-| [INFO][command-info] | Returns information and statistics about the server                                |
-| [ROLE][command-role] | Provides information on the role of a Redis instance in the context of replication |
+| Command                  | Description                                                                        |
+| ------------------------ | ---------------------------------------------------------------------------------- |
+| [INFO][command-info]     | Returns information and statistics about the server                                |
+| [ROLE][command-role]     | Provides information on the role of a Redis instance in the context of replication |
+| [SELECT][command-select] | Select the Redis logical database having the specified zero-based numeric index    |
+| [AUTH][command-auth]     | Authenticates the current connection                                               |
 
 ### Links
 
-1. [Deploy a Redis Sentinel Kubernetes cluster using Bitnami Helm charts](https://docs.bitnami.com/tutorials/deploy-redis-sentinel-production-cluster)
-2. [Redis Sentinel Documentation](https://redis.io/topics/sentinel)
+1. [IANA registration for Redis URL](https://www.npmjs.com/package/redis-url#url-format)
+2. [Deploy a Redis Sentinel Kubernetes cluster using Bitnami Helm charts](https://docs.bitnami.com/tutorials/deploy-redis-sentinel-production-cluster)
+3. [Redis Sentinel Documentation](https://redis.io/topics/sentinel)
+4. [High-Availability with Redis Sentinels: Connecting to Redis Master/Slave Sets](https://scalegrid.io/blog/high-availability-with-redis-sentinels-connecting-to-redis-masterslave-sets)
+5. [A Ruby client library for Redis](https://github.com/redis/redis-rb)
 
 [command-info]: https://redis.io/commands/info
 [command-role]: https://redis.io/commands/role
+[command-select]: https://redis.io/commands/select
+[command-auth]: https://redis.io/commands/auth
