@@ -85,7 +85,8 @@ $ curl -H 'Accept: application/json' http://localhost:8080/redis/keys
 
 ### Links
 
-1. [IANA registration for Redis URL](https://www.npmjs.com/package/redis-url#url-format)
+1. [Guidelines for Redis clients with support for Redis Sentinel](https://redis.io/topics/sentinel-clients)
+1. [IANA registration for Redis URL](https://www.iana.org/assignments/uri-schemes/prov/redis)
 2. [Deploy a Redis Sentinel Kubernetes cluster using Bitnami Helm charts](https://docs.bitnami.com/tutorials/deploy-redis-sentinel-production-cluster)
 3. [Redis Sentinel Documentation](https://redis.io/topics/sentinel)
 4. [High-Availability with Redis Sentinels: Connecting to Redis Master/Slave Sets](https://scalegrid.io/blog/high-availability-with-redis-sentinels-connecting-to-redis-masterslave-sets)
