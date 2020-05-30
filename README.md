@@ -1,4 +1,5 @@
 ![build](https://github.com/danielpacak/redis-sentinel-client-go-seed/workflows/build/badge.svg)
+[![codecov](https://codecov.io/gh/danielpacak/redis-sentinel-client-go-seed/branch/master/graph/badge.svg)](https://codecov.io/gh/danielpacak/redis-sentinel-client-go-seed)
 
 # redis-sentinel-client-go-seed
 
