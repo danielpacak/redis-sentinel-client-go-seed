@@ -19,6 +19,7 @@ func main() {
 }
 
 func run(_ []string) (err error) {
+	log.Info("Starting Go seed")
 	config, err := etc.GetConfig()
 	if err != nil {
 		return
