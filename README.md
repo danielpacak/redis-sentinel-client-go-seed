@@ -96,3 +96,5 @@ $ curl -H 'Accept: application/json' http://localhost:8080/redis/keys
 [command-role]: https://redis.io/commands/role
 [command-select]: https://redis.io/commands/select
 [command-auth]: https://redis.io/commands/auth
+
+this is a test
